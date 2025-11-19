@@ -170,7 +170,7 @@ class ClementsDecomposition:
         Returns:
             Reconstructed unitary matrix
         """
-        from .mzi import MZIMesh
+        from mzi import MZIMesh
 
         mesh = MZIMesh(self.n)
         mesh.set_phases(thetas, phis, output_phases)

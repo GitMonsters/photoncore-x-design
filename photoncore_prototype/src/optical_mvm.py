@@ -11,8 +11,8 @@ import numpy as np
 from typing import Optional, Callable, List
 from numba import jit
 
-from .mzi import MZIMesh
-from .clements import ClementsDecomposition, random_unitary, SVDDecomposition
+from mzi import MZIMesh
+from clements import ClementsDecomposition, random_unitary, SVDDecomposition
 
 
 class OpticalMatrixUnit:
@@ -131,9 +131,9 @@ class OpticalMatrixUnit:
         # Detection (coherent homodyne)
         if add_noise:
             # Add detector noise
-            noise = np.random.normal(0, self.detector_noise_std, self.n)
-            noise += 1j * np.random.normal(0, self.detector_noise_std, self.n)
-            optical_out += noise
+            noise_real = np.random.normal(0, self.detector_noise_std, self.n)
+            noise_imag = np.random.normal(0, self.detector_noise_std, self.n)
+            optical_out = optical_out + noise_real + 1j * noise_imag
 
             # Quantization (ADC)
             optical_out = self._quantize(optical_out)

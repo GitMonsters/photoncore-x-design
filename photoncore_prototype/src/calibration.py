@@ -296,7 +296,7 @@ class AutoCalibrator:
         Returns:
             Optimization results
         """
-        from .clements import ClementsDecomposition
+        from clements import ClementsDecomposition
 
         n = self.n_ports
 
@@ -492,7 +492,7 @@ class MLCalibrator:
 
 
 if __name__ == "__main__":
-    from .mzi import MZIMesh
+    from mzi import MZIMesh
 
     print("Testing Calibration System...")
 
@@ -525,7 +525,7 @@ if __name__ == "__main__":
 
     # Test optimization for target
     print("\n--- Test Target Optimization ---")
-    from .clements import random_unitary
+    from clements import random_unitary
     target = random_unitary(n)
 
     opt_result = auto_cal.optimize_for_target(target, max_iterations=100)

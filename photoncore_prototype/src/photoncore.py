@@ -9,10 +9,10 @@ import numpy as np
 from typing import List, Optional, Union, Tuple
 import time
 
-from .mzi import MZIMesh
-from .clements import ClementsDecomposition, random_unitary
-from .optical_mvm import OpticalMatrixUnit, OpticalNonlinearity, OpticalNeuralLayer, WDMParallelUnit
-from .calibration import CalibrationSystem, AutoCalibrator
+from mzi import MZIMesh
+from clements import ClementsDecomposition, random_unitary
+from optical_mvm import OpticalMatrixUnit, OpticalNonlinearity, OpticalNeuralLayer, WDMParallelUnit
+from calibration import CalibrationSystem, AutoCalibrator
 
 
 class PhotonCoreSimulator:
